@@ -19,32 +19,42 @@
 </script>
 
 <template>
-  <h1>Gêneros de filmes</h1>
-
-  <ul>
-    <li v-for="genre in moviesGenres" :key="genre.id">{{ genre.name }}</li>
-  </ul>
-  <hr />
-  <h1>Gêneros de programas de TV</h1>
-  <ul>
-    <li v-for="genre in TVGenres" :key="genre.id">{{ genre.name }} </li>
-  </ul>
-
-  <div>
-    <nav>
+<header>
+   <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/filmes">Filmes</router-link>
       <router-link to="/tv">Programas de TV</router-link>
-    </nav>
-       <router-view />
-  </div>
+
+   </nav>
+</header>
+<main>
+   <router-view />
+</main>
+
 </template>
 
 <style scoped>
+<style scoped>
+header {
+  height: 3rem;
+  display: flex;
+  background-color: black;
+  color: #fff;
+  font-size: 1.2rem;
+  padding-left: 2rem;
+}
+
 nav {
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
-    column-gap: 2rem;
-  }
+  column-gap: 2rem;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+</style>
+  
 </style>
