@@ -1,21 +1,4 @@
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import api from './plugins/axios';
-
-
-  const  MoviesGenres = Ref ([]);
-
-  const TVGenres = Ref ([]);
-
-
-  onMounted(async () => {
-
-    let response = await api.get ('genre/movie/list?language=pt-BR');
-     MoviesGenres.value = response.data.genres;
-      Response = await axios.get await api.get('genre/tv/list?language=pt-BR');
-
-       TVGenres.value = response.data.genres;
-         });
 </script>
 
 <template>
@@ -33,7 +16,6 @@
 
 </template>
 
-<style scoped>
 <style scoped>
 header {
   height: 3rem;
@@ -56,5 +38,4 @@ nav a {
   color: #fff;
 }
 </style>
-  
-</style>
+
