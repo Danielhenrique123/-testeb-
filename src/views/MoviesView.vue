@@ -1,6 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import api from '@/plugins/axios';
+import Loading from 'vue-loading-overlay';
+
+const isLoading = ref(false);
 
 const genres = ref ([]);
 
@@ -45,6 +48,8 @@ genres.value = response.data.genres;
 
       {{ genre.name }}</li>
     </ul>
+
+    <loading v-model:active="isLoading" is-full-page />
 
   </div>
 
